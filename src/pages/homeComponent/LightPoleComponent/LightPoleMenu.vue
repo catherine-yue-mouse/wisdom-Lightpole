@@ -12,7 +12,7 @@
       />
     </div>
     <div class="light_pole_list">
-      <div class="light_pole_list_title">
+      <div class="light_pole_title">
         <img src="../../../assets/light_pole_list_icon.png" />
         所有灯杆({{ allLightPoleNum }}/{{ activeLightPoleNum }})
         <a-checkbox v-model:checked="checked" @change="onChange"> </a-checkbox>
@@ -30,7 +30,26 @@
         />
       </div>
     </div>
-    <div class="light_control"></div>
+    <div class="light_control">
+      <div class="light_control_box">
+        <div class="gutter-box">
+          <img class="control_img" src="../../../assets/normal.png" />
+          正常
+        </div>
+        <div class="gutter-box">
+          <img class="control_img" src="../../../assets/offLine.png" />
+          离线
+        </div>
+        <div class="gutter-box">
+          <img class="control_img" src="../../../assets/stopWork.png" />
+          停用
+        </div>
+        <div class="gutter-box">
+          <img class="control_img" src="../../../assets/fault.png" />
+          故障
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -60,7 +79,7 @@ export default {
       checked: false,
       expandedKeys: [],
       autoExpandParent: true,
-      checkedKeys: ['0-0-0'],
+      checkedKeys: ['0-0-0-0'],
       selectedKeys: [],
       treeData,
       allLightPoleNum: 40,
@@ -99,6 +118,7 @@ export default {
   height: 100%;
   width: 100%;
   padding-right: 10px;
+  position: relative;
   .title {
     padding: 40px 25px 10px 25px;
     .home_icon {
@@ -138,75 +158,71 @@ export default {
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none; /* IE 10+ */
-    .light_pole_list_title {
-      height: 50px;
-      font-size: 18px;
-      color: #fff;
-      // line-height: 50px;
-      padding: 10px 25px;
-      background: linear-gradient(
-        90deg,
-        rgba(0, 151, 255, 0.24),
-        rgba(1, 11, 35, 0.24)
-      );
+    // .light_pole_list_title {
+    //   height: 50px;
+    //   font-size: 18px;
+    //   color: #fff;
+    //   // line-height: 50px;
+    //   padding: 10px 25px;
+    //   background: linear-gradient(
+    //     90deg,
+    //     rgba(0, 151, 255, 0.24),
+    //     rgba(1, 11, 35, 0.24)
+    //   );
 
-      img {
-        width: 22px;
-        height: 22px;
-      }
-      .ant-checkbox-wrapper {
-        position: absolute;
-        right: 20px;
-        top: 15px;
-      }
-    }
+    //   img {
+    //     width: 22px;
+    //     height: 22px;
+    //   }
+    //   .ant-checkbox-wrapper {
+    //     position: absolute;
+    //     right: 20px;
+    //     top: 15px;
+    //   }
+    // }
     .light_pole_list_tree {
-      padding: 10px 30px;
       position: relative;
-      /deep/ .ant-tree-checkbox {
-        // position: absolute;
-        left: 82%;
-        top:3px;
-        // top: 25px;
-      }
-      .ant-tree li ul {
-        padding: 0;
-      }
-     /deep/ .ant-tree-title {
+      /deep/.ant-tree .ant-tree-title {
         font-size: 18px;
         font-family: Microsoft YaHei;
         font-weight: 400;
         color: #ffffff;
         line-height: 25px;
-        opacity: 0.6;
       }
-      .ant-tree{
-        color:#0D92D7;
-        // font-size: 20px;
-      }
-      /deep/.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected{
-          background-color: rgba(15, 102, 172, 0.38);
+      /deep/.ant-tree > li {
+        padding: 10px 30px;
+        border-bottom: 2px solid #063c58;
       }
     }
-
-    //   /deep/.ant-tree li .ant-tree-node-content-wrapper {
-    //     height: 50px;
-    //     font-size: 18px;
-    //     color: #fff;
-    //     line-height: 50px;
-    //   }
-    //   .ant-tree-treenode-switcher-close {
-    //     .ant-tree-title {
-    //       font-size: 18px;
-    //       font-family: Microsoft YaHei;
-    //       font-weight: 400;
-    //       color: #ffffff;
-    //       line-height: 25px;
-    //     }
-    //   }
   }
   .light_pole_list::-webkit-scrollbar {
     display: none; /* Chrome Safari */
+  }
+  .light_control {
+    position: absolute;
+    bottom: 30px;
+    height: 63px;
+    width: 100%;
+    .light_control_box {
+      display: flex;
+      height: 100%;
+      margin: 0 auto;
+      width: 95%;
+      // justify-content: space-between;
+      align-items: center;
+      border: 1px dashed #ccc;
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 21px;
+    }
+    .control_img {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 }
 </style>

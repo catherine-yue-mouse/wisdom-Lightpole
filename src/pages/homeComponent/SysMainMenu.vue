@@ -28,6 +28,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 17px 0;
+  position: relative;
+  cursor: pointer;
   div {
     width: 142px;
     height: 42px;
