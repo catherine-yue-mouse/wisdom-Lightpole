@@ -69,6 +69,7 @@ export default {
     }
     .sys_content_main_left,
     .sys_content_main_right {
+      z-index: 100;
       width: 19%;
       height: 100%;     
       background-size: 100% 100%;
@@ -76,6 +77,7 @@ export default {
     }
 
     .sys_content_main_bttom {
+      z-index: 0;
       width: 100%;
       bottom: 0;
       height: 25%;

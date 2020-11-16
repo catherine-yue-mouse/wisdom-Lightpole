@@ -1,7 +1,7 @@
 <template>
   <div class="menu_content">
-    <div class="title">
-      <img class="home_icon" src="../../../assets/menu_home_icon.png" />
+    <div class="comment_title">
+      <img class="title_icon" src="../../../assets/menu_home_icon.png" />
       主页
     </div>
     <div class="search">
@@ -12,7 +12,7 @@
       />
     </div>
     <div class="light_pole_list">
-      <div class="light_pole_title">
+      <div class="light_pole_list_title">
         <img src="../../../assets/light_pole_list_icon.png" />
         所有灯杆({{ allLightPoleNum }}/{{ activeLightPoleNum }})
         <a-checkbox v-model:checked="checked" @change="onChange"> </a-checkbox>
@@ -118,24 +118,7 @@ export default {
   height: 100%;
   width: 100%;
   padding-right: 10px;
-  position: relative;
-  .title {
-    padding: 40px 25px 10px 25px;
-    .home_icon {
-      width: 27px;
-      height: 24px;
-      vertical-align: bottom;
-      display: inline-block;
-    }
-    font-size: 22px;
-    font-family: Microsoft YaHei;
-    font-weight: 400;
-    color: #ffffff;
-    line-height: 28px;
-    background: linear-gradient(0deg, #9dffff 0%, #3398ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  position: relative; 
   .search {
     padding: 15px;
     border-top: 2px solid #063c58;
@@ -158,28 +141,28 @@ export default {
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none; /* IE 10+ */
-    // .light_pole_list_title {
-    //   height: 50px;
-    //   font-size: 18px;
-    //   color: #fff;
-    //   // line-height: 50px;
-    //   padding: 10px 25px;
-    //   background: linear-gradient(
-    //     90deg,
-    //     rgba(0, 151, 255, 0.24),
-    //     rgba(1, 11, 35, 0.24)
-    //   );
+    .light_pole_list_title {
+      height: 50px;
+      font-size: 18px;
+      color: #fff;
+      // line-height: 50px;
+      padding: 10px 25px;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 151, 255, 0.24),
+        rgba(1, 11, 35, 0.24)
+      );
 
-    //   img {
-    //     width: 22px;
-    //     height: 22px;
-    //   }
-    //   .ant-checkbox-wrapper {
-    //     position: absolute;
-    //     right: 20px;
-    //     top: 15px;
-    //   }
-    // }
+      img {
+        width: 22px;
+        height: 22px;
+      }
+      .ant-checkbox-wrapper {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+    }
     .light_pole_list_tree {
       position: relative;
       /deep/.ant-tree .ant-tree-title {
