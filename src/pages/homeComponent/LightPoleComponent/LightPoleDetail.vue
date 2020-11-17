@@ -38,10 +38,12 @@ export default {
 .light_pole_detail {
   padding: 0 0px 10px 5px;
   position: relative;
+  width: 100%;
+  height: 100%;
   .table_panel {
     position: absolute;
-    left: -25px;
-    top: 90px;
+    left: -22px;
+    top: 88px;
     .table_item {
       margin-bottom: 9px;
       font-size: 14px;

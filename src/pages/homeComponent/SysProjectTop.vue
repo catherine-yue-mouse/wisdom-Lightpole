@@ -35,6 +35,7 @@ export default {
  .sys_top {
     text-align: center;
     height: 70px;
+    position: relative;
     width: 100%;
     background-image: url('../../assets/sys_top_bg.png');
     background-size: cover;

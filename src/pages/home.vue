@@ -1,6 +1,8 @@
 <template>
   <div class="sys_content">
-    <div class="sys_map"></div>
+    <div class="sys_map">
+        <MapControl/>
+    </div>
     <SysProjectTop />
     <SysMainMenu />
     <div class="sys_content_main">
@@ -17,6 +19,7 @@
   </div>
 </template>
 <script>
+import MapControl from './mapComponent/mapControl'
 import SysProjectTop from './homeComponent/SysProjectTop'
 import SysMainMenu from './homeComponent/SysMainMenu'
 import LightPoleMenu from './homeComponent/LightPoleComponent/LightPoleMenu'
@@ -24,6 +27,7 @@ import LightPoleDetail from './homeComponent/LightPoleComponent/LightPoleDetail'
 import LightPoleFunSwiper from './homeComponent/LightPoleComponent/LightPoleFunSwiper'
 export default {
   components: {
+    MapControl,
     SysProjectTop,
     SysMainMenu,
     LightPoleMenu,
@@ -46,7 +50,7 @@ export default {
   .sys_map {
     height: 100%;
     width: 100%;
-    z-index: 0;
+    // z-index: 0;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -57,7 +61,7 @@ export default {
     width: 100%;
     height: calc(100% - 140px);
     bottom: 0;
-    z-index: 10;
+    // z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,7 +73,7 @@ export default {
     }
     .sys_content_main_left,
     .sys_content_main_right {
-      z-index: 100;
+      // z-index: 100;
       width: 19%;
       height: 100%;     
       background-size: 100% 100%;
@@ -77,7 +81,7 @@ export default {
     }
 
     .sys_content_main_bttom {
-      z-index: 0;
+      // z-index: 0;
       width: 100%;
       bottom: 0;
       height: 25%;
