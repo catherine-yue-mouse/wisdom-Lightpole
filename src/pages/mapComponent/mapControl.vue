@@ -20,9 +20,9 @@ export default {
       })
     },
     getMarkList() {
-      this.markList.map((item)=>{
-        
-      })
+      // this.markList.map((item)=>{
+
+      // })
       this.map.add(this.markerList)
     },
   },
