@@ -4,14 +4,16 @@
         <MapControl/>
     </div>
     <SysProjectTop />
-    <SysMainMenu />
+    <SysMainMenu @change='changeSysType' />
     <div class="sys_content_main">
       <div class="sys_content_main_left">
         <LightPoleMenu />
       </div>
-      <div class="sys_content_main_right">
-        <LightPoleDetail />
+      <div v-if="sysType=='operating'"  class="sys_content_main_right">
+        <LightPoleDetail />       
       </div>
+       <DataAnalysisIndex v-if="sysType=='dataAnalysis'" />
+        <!-- <LightPoleDetail v-if="sysType=='SystemManagement'" /> -->
       <div class="sys_content_main_bttom">
         <LightPoleFunSwiper />
       </div>
@@ -25,6 +27,7 @@ import SysMainMenu from './homeComponent/SysMainMenu'
 import LightPoleMenu from './homeComponent/LightPoleComponent/LightPoleMenu'
 import LightPoleDetail from './homeComponent/LightPoleComponent/LightPoleDetail'
 import LightPoleFunSwiper from './homeComponent/LightPoleComponent/LightPoleFunSwiper'
+import DataAnalysisIndex from './dataAnalysis/dataAnalysisIndex'
 export default {
   components: {
     MapControl,
@@ -33,12 +36,19 @@ export default {
     LightPoleMenu,
     LightPoleDetail,
     LightPoleFunSwiper,
+    DataAnalysisIndex,
   },
   data() {
     return {
       projectName: '北京项目',
+      sysType:'operating'
     }
   },
+  methods:{
+    changeSysType(type){
+      this.sysType=type;
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

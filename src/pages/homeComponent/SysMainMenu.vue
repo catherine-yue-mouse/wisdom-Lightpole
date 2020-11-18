@@ -1,12 +1,12 @@
 <template>
   <div class="sys_main_menu">
-    <div :class="activeIndex==0?'active_menu':''">
+    <div :class="activeIndex==0?'active_menu':''" @click="change('operating',0)">
       运营中心
     </div>
-    <div>
+    <div :class="activeIndex==1?'active_menu':''" @click="change('dataAnalysis',1)">
       数据分析
     </div>
-    <div>
+    <div :class="activeIndex==2?'active_menu':''" @click="change('SystemManagement',2)">
       系统管理
     </div>
   </div>
@@ -16,6 +16,12 @@ export default {
   data(){
     return{
       activeIndex:0
+    }
+  },
+  methods:{
+    change(type,index){
+      this.activeIndex=index;
+        this.$emit('change',type)
     }
   }
 }

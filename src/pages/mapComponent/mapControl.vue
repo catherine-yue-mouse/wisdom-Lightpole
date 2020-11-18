@@ -7,7 +7,12 @@ export default {
   data() {
     return {
       map: null,
-      markList: [{lat:116.39,lng:39.9},{lat:115.39,lng:38.9},{lat:115.39,lng:36.9}],
+      markList: [
+        { lat: 116.39, lng: 39.9, type: 'normal' },
+        { lat: 115.39, lng: 38.9, type: 'offLine' },
+        { lat: 115.39, lng: 36.9, type: 'offLine' },
+        { lat: 115.39, lng: 36.9, type: 'fault' },
+      ],
     }
   },
   methods: {
@@ -18,12 +23,17 @@ export default {
         center: [116.397428, 39.90923], //中心点坐标
         viewMode: '3D', //使用3D视图
       })
+      this.getMarkList()
     },
+    markerIconImg() {},
     getMarkList() {
-      // this.markList.map((item)=>{
+      // 创建一个 Marker 实例：
+      let marker = new AMap.Marker({
+        position: new AMap.LngLat(116.39, 39.9), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]       
+      })
 
-      // })
-      this.map.add(this.markerList)
+      // 将创建的点标记添加到已有的地图实例：     
+      this.map.add(marker)
     },
   },
   mounted() {
