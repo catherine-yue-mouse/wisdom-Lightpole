@@ -36,7 +36,10 @@ export default {
 
 <style lang="less" scoped>
 .light_pole_detail {
-  padding: 0 0px 10px 5px;
+  // padding: 0 0px 10px 5px;
+   background-size: 100% 100%;
+      background-position: center center;
+  background-image: url('../../../assets/sys_contrl_right.png');
   position: relative;
   width: 100%;
   height: 100%;

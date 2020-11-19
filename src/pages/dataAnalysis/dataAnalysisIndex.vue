@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="data_analysiy_index">
     <TrendOfEnergy/>
     <IntelligentLighting/>
     <Faultstatistics/>
@@ -17,3 +17,8 @@ export default {
   },
 }
 </script>
+<style>
+.data_analysiy_index{
+  height: 100%;
+}
+</style>

@@ -9,11 +9,12 @@
       <div class="sys_content_main_left">
         <LightPoleMenu />
       </div>
-      <div v-if="sysType=='operating'"  class="sys_content_main_right">
-        <LightPoleDetail />       
+      <div class="sys_content_main_right">
+        <LightPoleDetail v-if="sysType=='operating'"/>   
+        <DataAnalysisIndex v-if="sysType=='dataAnalysis'" />
+        <!-- <LightPoleDetail v-if="sysType=='SystemManagement'" /> -->    
       </div>
-       <DataAnalysisIndex v-if="sysType=='dataAnalysis'" />
-        <!-- <LightPoleDetail v-if="sysType=='SystemManagement'" /> -->
+       
       <div class="sys_content_main_bttom">
         <LightPoleFunSwiper />
       </div>
@@ -77,17 +78,18 @@ export default {
     align-items: center;
     .sys_content_main_left {
       background-image: url('../assets/sys_contrl_left.png');
+      background-size: 100% 100%;
+      background-position: center center;
     }
     .sys_content_main_right {
-      background-image: url('../assets/sys_contrl_right.png');
+      // background-image: url('../assets/sys_contrl_right.png');
     }
     .sys_content_main_left,
     .sys_content_main_right {
       // z-index: 100;
       width: 19%;
       height: 100%;     
-      background-size: 100% 100%;
-      background-position: center center;
+      
     }
 
     .sys_content_main_bttom {
