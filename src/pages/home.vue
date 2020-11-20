@@ -10,13 +10,13 @@
         <LightPoleMenu />
       </div>
       <div class="sys_content_main_right">
-        <LightPoleDetail v-if="sysType=='operating'"/>   
-        <DataAnalysisIndex v-if="sysType=='dataAnalysis'" />
+        <!-- <LightPoleDetail v-if="false"/>    -->
+        <DataAnalysisIndex  :lightControlType='dataAnalysisType' />
         <!-- <LightPoleDetail v-if="sysType=='SystemManagement'" /> -->    
       </div>
        
       <div class="sys_content_main_bttom">
-        <LightPoleFunSwiper />
+        <LightPoleFunSwiper @change='changeDataAnalysisType' />
       </div>
     </div>
   </div>
@@ -26,8 +26,8 @@ import MapControl from './mapComponent/mapControl'
 import SysProjectTop from './homeComponent/SysProjectTop'
 import SysMainMenu from './homeComponent/SysMainMenu'
 import LightPoleMenu from './homeComponent/LightPoleComponent/LightPoleMenu'
-import LightPoleDetail from './homeComponent/LightPoleComponent/LightPoleDetail'
-import LightPoleFunSwiper from './homeComponent/LightPoleComponent/LightPoleFunSwiper'
+// import LightPoleDetail from './homeComponent/LightPoleComponent/LightPoleDetail'
+import LightPoleFunSwiper from './homeComponent/LightPoleFunSwiper'
 import DataAnalysisIndex from './dataAnalysis/dataAnalysisIndex'
 export default {
   components: {
@@ -35,19 +35,24 @@ export default {
     SysProjectTop,
     SysMainMenu,
     LightPoleMenu,
-    LightPoleDetail,
+    // LightPoleDetail,
     LightPoleFunSwiper,
     DataAnalysisIndex,
   },
   data() {
     return {
       projectName: '北京项目',
-      sysType:'operating'
+      sysType:'operating',
+      dataAnalysisType:'IntelligentLightPole',
     }
   },
   methods:{
     changeSysType(type){
       this.sysType=type;
+    },
+    changeDataAnalysisType(type){
+      this.dataAnalysisType=type;
+      console.log(this.dataAnalysisType)
     }
   }
 }

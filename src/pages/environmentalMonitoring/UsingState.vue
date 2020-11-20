@@ -1,0 +1,21 @@
+<template>
+  <div class="mention_detail mention_detail_clear_padding">
+    <div class="mention_title">使用状态</div>
+    <div class="chart_content">
+     
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      data:[],
+      columns:[]
+    }
+  },
+}
+</script>
+<style lang="less" scoped>
+
+</style>
