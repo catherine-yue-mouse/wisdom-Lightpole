@@ -20,38 +20,50 @@ export default {
       this.myChart = echarts.init(document.getElementById('chart_content'))
 
       // 指定图表的配置项和数据
-      let option = {       
+      let option = {
+        color: ['#007EFF', '#008A21', '#6E008A', '#8A5E00'],
         tooltip: {
           trigger: 'axis',
           axisPointer: {
             type: 'shadow',
           },
         },
-        legend: {
-          data: ['2011年', '2012年'],
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
         xAxis: {
           type: 'value',
-          boundaryGap: [0, 1200],
+          axisLine: {
+            lineStyle: {
+              color: '#576385',
+            },
+          },
+          splitLine: {
+            show: false,
+          },
+          boundaryGap: [0, 0.01],
+        },
+        grid: {
+          left: '0%',
+          right: '5%',
+          bottom: '0%',
+          top:"5%",
+          containLabel: true,
         },
         yAxis: {
           type: 'category',
-          data: [ '年', '月','周', '日'],
+          axisLine: {
+            lineStyle: {
+              color: '#576385',
+            },
+          },
+          data: ['年', '月', '周', '日'],
         },
         series: [
-          {           
+          {
+            name: '2011年',
             type: 'bar',
-            data: [10,20,30,40],
-          }         
+            data: [3200, 800, 300, 50],
+          },
         ],
       }
-
       // 使用刚指定的配置项和数据显示图表。
       this.myChart.setOption(option)
     },
@@ -60,7 +72,7 @@ export default {
 </script>
 <style lang="less" scoped>
 #chart_content {
-  height: calc(100% - 70px);
+  height: calc(100% - 45px);
   width: 100%;
 }
 </style>

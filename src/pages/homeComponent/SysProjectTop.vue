@@ -33,6 +33,7 @@ export default {
 </script>
 <style lang="less" scoped>
  .sys_top {
+   z-index: 99;
     text-align: center;
     height: 70px;
     position: relative;

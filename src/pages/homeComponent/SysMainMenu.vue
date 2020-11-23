@@ -29,12 +29,14 @@ export default {
 <style lang="less" scoped>
 .sys_main_menu {
   width: 25%;
+  height: 70px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 17px 0;
   position: relative;
+  z-index: 99;
   cursor: pointer;
   div {
     width: 142px;

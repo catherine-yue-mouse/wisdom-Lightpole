@@ -1,7 +1,7 @@
 <template>
   <div class="sys_content">
     <div class="sys_map">
-        <MapControl/>
+        <MapControl :lightControlType="dataAnalysisType"/>
     </div>
     <SysProjectTop />
     <SysMainMenu @change='changeSysType' />
@@ -66,25 +66,25 @@ export default {
   .sys_map {
     height: 100%;
     width: 100%;
-    // z-index: 0;
+    z-index: 99;
     position: absolute;
     top: 0;
     bottom: 0;
     background-color: rgba(0, 22, 45, 0.8);
   }
   .sys_content_main {
-    position: absolute;
+    // position: absolute;
     width: 100%;
     height: calc(100% - 140px);
     bottom: 0;
-    // z-index: 10;
+    z-index: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     .sys_content_main_left {
       background-image: url('../assets/sys_contrl_left.png');
       background-size: 100% 100%;
-      background-position: center center;
+      background-position: center center;     
     }
     .sys_content_main_right {
       // background-image: url('../assets/sys_contrl_right.png');
@@ -94,11 +94,11 @@ export default {
       // z-index: 100;
       width: 19%;
       height: 100%;     
-      
+       z-index: 99;
     }
 
     .sys_content_main_bttom {
-      // z-index: 0;
+      z-index: 99;
       width: 100%;
       bottom: 0;
       height: 25%;

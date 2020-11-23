@@ -60,6 +60,8 @@ export default {
 }
 /deep/.ant-table-tbody > tr > td {
   border-bottom: none;
+  padding: 0 10px;
+  height: 35px;
 }
 /deep/.display_list:nth-child(even){
   background: #173566;

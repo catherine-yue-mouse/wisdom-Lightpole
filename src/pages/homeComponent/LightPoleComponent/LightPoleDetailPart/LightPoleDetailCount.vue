@@ -1,7 +1,10 @@
 <template>
-  <div class="light_pole_detail_count">   
+  <div class="light_pole_detail_count">
     <div class="comment_title">
-      <img class="title_icon" src="../../../../assets/light_pole_list_icon.png" />
+      <img
+        class="title_icon"
+        src="../../../../assets/light_pole_list_icon.png"
+      />
       数量统计
     </div>
     <div class="count_grid">
@@ -17,7 +20,7 @@
           }}</span
           >台
         </div>
-      </div>    
+      </div>
     </div>
     <div class="broken_count_content">
       <div class="comment_title padding_top_20">
@@ -92,6 +95,19 @@ export default {
           type: 'normal',
         },
         { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
+        { title: '报警：线路一灯杆02一键呼叫出故障', type: 'warring' },
       ],
     }
   },
@@ -104,6 +120,7 @@ export default {
 <style lang="less" scoped>
 .light_pole_detail_count {
   padding: 0 0px 10px 5px;
+  height: 100%;
   .linear_text {
     font-size: 22px;
     font-family: Microsoft YaHei;
@@ -150,12 +167,12 @@ export default {
         }
       }
     }
-    
   }
   .broken_count_content {
     border-top: 1px solid #06e4c6;
-    height: 300px;
-    overflow-y: scroll;
+    position: relative;
+    height: calc(100% - 500px);
+    // overflow-y: hidden;
 
     .broken_list {
       padding: 10px 25px;
@@ -164,38 +181,89 @@ export default {
       font-weight: 400;
       color: #ffffff;
       line-height: 18px;
+      height: calc(100% - 60px);
+      overflow-y: scroll;
+      position: relative;
       .broken_list_item {
         margin-bottom: 9px;
       }
       span {
         display: inline-block;
-        width: 32px;
-        height: 14px;
-        background-color: #06ffda;
-        margin-right: 6px;
+        // width: 32px;
+        // height: 0px;
+        // background-color: #06ffda;
+        width: 25px;
+        height: 15px;
+        background: #06ffda;
+        position: relative;
+        margin-right: 15px;
+      }
+      span:before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -10px;
+        top: 5px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 4px solid #06ffda;
+        font-size: 0;
+        line-height: 0;
+        transform: rotate(270deg);
+      }
+      span:after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -10px;
+        top: 5px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 4px solid #06ffda;
+        font-size: 0;
+        line-height: 0;
+        transform: rotate(90deg);
+      }
+      .warring_bg_color:before {
+        border-bottom: 4px solid #ff2a2a;
+      }
+      .warring_bg_color:after {
+        border-bottom: 4px solid #ff2a2a;
       }
     }
   }
-  .broken_count_content::-webkit-scrollbar {
+
+  .broken_list::-webkit-scrollbar {
     width: 15px;
-    background: rgba(39, 40, 92, 10.8);
-    border-radius: 10px;    
+    background: rgba(39, 40, 92, 0.8);
+    border-radius: 10px;
   }
-  // .broken_count_content::-webkit-scrollbar-thumb {
-  //   background: #06ffda;
-  //   border-radius: 10px;
-  //   height: 10px;
-  //   background-image: url('../../../assets/logo.png');
-  //   height: 20px;
-  // }
-  // .broken_count_content::-webkit-scrollbar-track {
-  //   background: #27285c;
-  //   border-radius: 2px;
-  // }
-  .broken_count_content::-webkit-scrollbar-button {
-    // background-color: #06ffda;
-    // background-image: url('../../../assets/scroll_bar_top.png');
+  .broken_list::-webkit-scrollbar-thumb {
+    background: #06ffda;
+    border-radius: 10px;
+    height: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    height: 20px;
   }
+  .broken_list::-webkit-scrollbar-track {
+    background: #27285c;
+    border-radius: 2px;
+  }
+  .broken_list::-webkit-scrollbar-button {
+    background-color: #27285c;
+  }
+  // .broken_list::after {
+  //   content: "";
+  //   position: absolute;
+  //   right: -1px;
+  //   top: 0;
+  //   width: 5px;
+  //   height: 5px;
+  //   // display: block;
+  //   background-color: #06ffda;
+  // }
 
   // .broken_count_content::-webkit-scrollbar-thumb:hover {
   //   background: #333;
