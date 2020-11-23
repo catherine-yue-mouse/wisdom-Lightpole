@@ -77,7 +77,7 @@ export default {
         })
         return (item = new AMap.Marker({
           icon: icon,
-          content:this.getContent(),
+          // content:this.getContent(),
           position: new AMap.LngLat(item.lat, item.lng), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
         }))
       })
