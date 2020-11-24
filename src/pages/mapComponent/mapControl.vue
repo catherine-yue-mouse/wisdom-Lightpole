@@ -1,8 +1,13 @@
 <template>
   <div id="container"></div>
+  <EquipmentOperation
+    v-if="EquipmentOperationVisible"
+    :equipmentType="equipmentType"
+  />
 </template>
 <script>
-import mapMarkerControl from './mapMarkerControl'
+// import mapMarkerControl from './mapMarkerControl'
+import EquipmentOperation from '../../components/EquipmentOperation'
 import AMap from 'AMap'
 export default {
   props: {
@@ -11,16 +16,17 @@ export default {
       default: () => 'IntelligentLightPole',
     },
   },
-  // components:{
-  //   mapMarkerControl
-  // },
+  components: {
+    EquipmentOperation,
+  },
   data() {
     return {
       map: null,
-      icon:null,
-      sizeWith:50,
-      sizeHeight:50,
-      markerContent:null,
+      icon: null,
+      EquipmentOperationVisible: false,
+      sizeWith: 50,
+      sizeHeight: 50,
+      markerContent: null,
       IntelligentLightPole: {
         normal: require('../../assets/normal.png'),
         offLine: require('../../assets/offLine.png'),
@@ -41,14 +47,22 @@ export default {
       ],
     }
   },
+  created() {
+    this.isLoadEquipmentOperation()
+  },
   watch: {
     lightControlType: {
       handler(newName, oldName) {
+        this.equipmentType = newName
+        this.isLoadEquipmentOperation()
         this.changeMarkeIcon(newName, oldName)
       },
     },
   },
   methods: {
+    isLoadEquipmentOperation() {
+      this.EquipmentOperationVisible=this.lightControlType != 'IntelligentLightPole'?true:false;      
+    },
     initMap() {
       this.map = new AMap.Map('container', {
         zoom: 11, //级别
@@ -59,14 +73,21 @@ export default {
       this.getMarkList()
     },
     changeMarkeIcon(type) {
-      this.map.remove(this.markerList);
-      this.sizeWith=100;
-      this.sizeHeight=130;
-      switch(type){
-        case 'IntelligentLight':this.icon=this.IntelligentLight;break;
-        case 'IntelligentLightPole':{this.icon=this.IntelligentLightPole;this.sizeWith=50;this.sizeHeight=50;break;}
+      this.map.remove(this.markerList)
+      this.sizeWith = 100
+      this.sizeHeight = 130
+      switch (type) {
+        case 'IntelligentLight':
+          this.icon = this.IntelligentLight
+          break
+        case 'IntelligentLightPole': {
+          this.icon = this.IntelligentLightPole
+          this.sizeWith = 50
+          this.sizeHeight = 50
+          break
+        }
       }
-      this.getMarkList();
+      this.getMarkList()
     },
     getMarkList() {
       this.markerList = this.markList.map((item) => {
@@ -84,15 +105,13 @@ export default {
       // 将创建的点标记添加到已有的地图实例：
       this.map.add(this.markerList)
     },
-    getContent(){
-    
-      return  '<div>123</div>';
-    }
+    getContent() {
+      return '<div>123</div>'
+    },
   },
   mounted() {
-    this.icon=this.IntelligentLightPole;
-    console.log(mapMarkerControl)
-    this.initMap();
+    this.icon = this.IntelligentLightPole
+    this.initMap()
   },
 }
 </script>

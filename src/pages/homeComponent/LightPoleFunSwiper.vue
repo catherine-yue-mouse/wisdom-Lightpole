@@ -61,7 +61,8 @@
   </div>
 </template>
 <script>
-import Swiper from 'swiper'
+import Swiper from 'swiper';
+import { message } from 'ant-design-vue';
 export default {
   data() {
     return {
@@ -96,6 +97,9 @@ export default {
   methods:{
     change(type,index){
       this.activeIndex=index;
+      if(index===1){
+        message.info('提示：请先选中要操作的灯杆');
+      }
       this.$emit('change',type)
     }
   }

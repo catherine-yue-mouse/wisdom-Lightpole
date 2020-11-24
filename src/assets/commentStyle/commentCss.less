@@ -1,3 +1,6 @@
+body {
+  overflow: hidden;
+}
 .comment_title {
   padding: 40px 25px 10px 25px;
   .title_icon {
@@ -28,11 +31,11 @@
   padding-top: 20px !important;
 }
 .mention_detail {
-  background-color:RGBA(17, 28, 58, 0.5);
+  background-color: RGBA(17, 28, 58, 0.5);
   height: 31%;
   border: 1px solid #ccc;
   margin-bottom: 17px;
-  padding:15px 0px 0px 15px;
+  padding: 15px 0px 0px 15px;
   .mention_title {
     font-size: 18px;
     font-family: Microsoft YaHei;
@@ -42,21 +45,109 @@
     border-left: 4px solid rgba(0, 255, 252, 0.6);
     padding-left: 16px;
     height: 33px;
-    background: linear-gradient(90deg, rgba(0, 151, 255, 0.4),  rgba(rgba(1, 11, 35, 0.4)));
-  
+    background: linear-gradient(
+      90deg,
+      rgba(0, 151, 255, 0.4),
+      rgba(rgba(1, 11, 35, 0.4))
+    );
   }
-  .video_content{
-    height: calc(100% - 40px);   
+  .video_content {
+    height: calc(100% - 40px);
   }
-  .img_content{
-    height: calc(100% - 35px);   
-    img{
+  .img_content {
+    height: calc(100% - 35px);
+    img {
       width: 100%;
       height: 100%;
     }
   }
 }
-.chart_content{
+.chart_content {
   width: 100%;
   height: calc(100% - 45px);
+}
+.ant-message-notice-content {
+  color: #fff;
+  background-color: rgba(2, 88, 193, 0.5);
+  top: 50%;
+  width: 40%;
+  height: 100px;
+  line-height: 100px;
+  font-size: 18px;
+  margin-top: 20%;
+}
+
+.ant-modal-header,
+.ant-modal-footer,.ant-modal-title {
+  background-color: rgba(2, 88, 193, 0.5);
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #ffffff; 
+}
+.ant-modal-header {
+  border-bottom: 1px solid rgba(0, 255, 252, 0.3);
+}
+.ant-modal-footer {
+  border-top: none;
+}
+.equipment_ctrol_btn {
+  min-width: 50px;
+  height: 23px;
+  color: #fff;
+  background: linear-gradient(0deg, #026acb 30%, #459ee9 100%);
+  text-align: center;
+  padding: 0;
+  border: 1px solid #3fbcef;
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
+.equipment_ctrol_content {
+  padding: 5px 0;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 25px;
+  .ant-checkbox-wrapper {
+    color: #ffffff;
+  }
+}
+.ant-slider-track{
+  background: linear-gradient(90deg, #5F36A9, #1382FF);
+  border-radius: 2px;
+}
+.ant-slider-handle{
+  border: solid 2px #00EDFF;
+}
+.ant-message-error{
+color: #FF0000;
+}
+.ant-table-tbody > tr > td,.ant-table-thead > tr > th{
+  background: RGBA(1, 31, 71, 1);
+  border-bottom:1px solid RGBA(63, 252, 230, 0.4);
+}
+.ant-table-column-title,.ant-table-tbody > tr > td{
+ 
+font-size: 14px;
+font-family: Microsoft YaHei;
+font-weight: bold;
+color: #04D9FF;
+
+}
+.ant-modal-mask{
+  background-color: RGBA(3, 27, 63, 0.6);
+}
+.ant-modal-close{
+  color:#fff; 
+}
+.ant-modal-close-x{
+  font-size: 32px;
+}
+.text_aligin_end{
+  text-align: end;
+}
+.ant-tree.ant-tree-show-line li span.ant-tree-switcher{
+background: transparent;
+color: #fff;
 }
