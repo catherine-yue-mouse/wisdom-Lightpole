@@ -1,5 +1,13 @@
 <template>
   <div id="container"></div>
+  <div class="map_ccontrol">
+    <span>
+      <img src="../../assets/handle.png"/>
+    </span>
+    <span>
+      <img src="../../assets/draw.png"/>
+    </span>   
+  </div>
   <EquipmentOperation
     v-if="EquipmentOperationVisible"
     :equipmentType="equipmentType"
@@ -121,5 +129,23 @@ export default {
   height: 100%;
   opacity: 0.6;
   // z-index: 1;
+}
+.map_ccontrol{
+  position: absolute;
+  top:100px ;
+  right: 20px;
+  span{
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    border:1px solid RGBA(11, 48, 127, 1);
+    background-color: RGBA(11, 48, 127, 0.2);
+  }
+  img{
+    width: 15px;
+    height: 20px;
+  }
 }
 </style>
