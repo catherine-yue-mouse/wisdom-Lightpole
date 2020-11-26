@@ -16,7 +16,8 @@
     "swiper": "^6.3.5",
     "vue": "^3.0.2",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-router": "^4.0.0-alpha.6"
+    "vue-router": "^4.0.0-alpha.6",
+    "wavesurfer.js": "^4.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.8",
