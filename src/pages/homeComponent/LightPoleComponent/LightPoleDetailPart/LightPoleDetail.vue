@@ -1,7 +1,7 @@
 <template>
   <div class="light_detail_content">
     <div class="light" @click="showModal">
-      <!-- <img src="../../../../assets/light_pole.png"> -->
+      <img src="../../../../assets/light_pole.png">
     </div>
     <div class="light_bg_img">
       <img src="../../../../assets/light_bg.png" />
@@ -40,9 +40,9 @@ export default {
     position: absolute;
     width: 40%;   
     bottom: 7%;
-    height: 70%;
+    height: 90%;
     left: 30%;
-    border:1px solid #06E3C5;
+    // border:1px solid #06E3C5;
     img{
       width: 100%;
       height: 100%;

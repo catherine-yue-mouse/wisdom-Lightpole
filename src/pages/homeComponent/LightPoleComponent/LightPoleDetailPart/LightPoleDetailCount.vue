@@ -119,7 +119,7 @@ export default {
 
 <style lang="less" scoped>
 .light_pole_detail_count {
-  padding: 0 0px 10px 5px;
+  padding: 0 0px 10px 20px;
   height: 100%;
   .linear_text {
     font-size: 22px;
@@ -169,11 +169,14 @@ export default {
     }
   }
   .broken_count_content {
-    border-top: 1px solid #06e4c6;
+    // border-top: 1px solid #06e4c6;
     position: relative;
+    padding-left: 10px;
     height: calc(100% - 500px);
     // overflow-y: hidden;
-
+    >div:first-child{
+      border-top:1px solid #06e4c6;
+    }
     .broken_list {
       padding: 10px 25px;
       font-size: 14px;

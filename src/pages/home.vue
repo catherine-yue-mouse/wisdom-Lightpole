@@ -82,17 +82,18 @@ export default {
     justify-content: space-between;
     align-items: center;
     .sys_content_main_left {
+       width: 19%;
       background-image: url('../assets/sys_contrl_left.png');
       background-size: 100% 100%;
       background-position: center center;     
     }
     .sys_content_main_right {
-      // background-image: url('../assets/sys_contrl_right.png');
+       width: 20%;
     }
     .sys_content_main_left,
     .sys_content_main_right {
       // z-index: 100;
-      width: 19%;
+     
       height: 100%;     
        z-index: 99;
     }
